@@ -5,6 +5,9 @@ description: >
   Use when the user asks "MU 어때?", "NVDA 지금 사도 돼?", "이거 고평가야?", "메모리 사이클 죽었어?",
   "what do you think of TSLA", "is X overvalued", "should I be worried about my semi exposure",
   or asks for a report or a verdict on any listed name, whether or not they hold it.
+  Applies to EVERY ticker question, including a follow-up naming a different ticker later in the
+  same conversation ("TSLA는?", "그럼 AMD는?"). A second ticker is a second report, not a
+  continuation of the previous one.
 ---
 
 # Analyze a holding or theme
@@ -14,7 +17,12 @@ It does not size an entry or time one: that is `show_technical`, and only after 
 
 ## The one rule that matters
 
-**Call `get_insight_report` first. Always.**
+**Call `get_insight_report` first. Every ticker question, every time.**
+
+This includes the second and third ticker in the same conversation. "TSLA는 어때?" following a
+report on MU is a new question about a different company, and answering it from the drill-down
+tools you happened to use last is the single most common way this goes wrong. Having already run
+the chain once is a reason to reset to the report, not a reason to skip it.
 
 Opening with a `show_valuation` / `show_financials` / `show_technical` chain is the failure this
 skill exists to prevent. Those tools return numbers about the ticker. `get_insight_report` returns
@@ -29,8 +37,11 @@ Pass 1 to 4 tickers. For a theme, pass its most representative tickers and put t
 
 1. Lead with the fired models, each presented through its `binary_frame` pair. Models that did not
    fire are not findings, do not list them.
-2. Follow `drill_down` pointers when a claim needs more depth. That is when `show_valuation`,
-   `show_financials` and `show_technical` become correct, not before.
+2. Follow a `drill_down` pointer only when a specific claim in your answer cannot stand without it.
+   **Budget: 2 drill-down calls, and often the right number is zero.** The report already carries
+   the evidence figures. Running `show_valuation`, `show_financials` and `show_technical` as a set
+   is the improvised chain wearing a different hat, and it teaches the next turn to skip the report
+   entirely. Pick the one weakest link in the argument and check that.
 3. Read the multi-horizon return matrices (1M/3M/6M/1Y) stacked on top of each other. A single
    window is how a rotation gets mistaken for a trend.
 4. Close on `portfolio_exposure`. The answer lands on the user's money or it did not land.
