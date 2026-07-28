@@ -1,7 +1,19 @@
 # Setup
 
-The connector signs the user in on the first tool call, so there is nothing to configure by hand.
-The one thing that actually blocks a useful first answer is an empty account.
+## Connect the connector first
+
+Installing the plugin does not connect it. In the Claude apps the bundled `opula` connector starts
+disconnected, and it is connected from **Settings > Plugins > Opula > Connectors**. Until that
+happens the skills load but no opula tool exists to call.
+
+So when an opula tool is missing or every call fails to resolve, the cause is almost always this
+step rather than the account or the skill. Point the user at that screen in one line instead of
+retrying the call or improvising an answer from the web. In Claude Code there is no such screen:
+the sign-in prompt appears on the first tool call.
+
+## Then: the empty account
+
+Once connected, the one thing that blocks a useful first answer is an empty account.
 
 ## First run
 

@@ -7,8 +7,13 @@ Powered by the hosted [opula](https://opula.io) MCP server.
 
 ## Install
 
-In Claude (web chat, Desktop Chat tab, or Cowork): **Customize > Plugins > + > Add marketplace**,
-then paste this repository URL and install the `opula` plugin.
+In Claude (web chat, Desktop Chat tab, or Cowork):
+
+1. **Customize > Plugins > + > Add marketplace**, then paste this repository URL.
+2. Install the `opula` plugin.
+3. **Installing does not connect it.** Open **Settings > Plugins > Opula > Connectors** and hit
+   connect on `opula`. Sign in when the browser prompts you. Skipping this step leaves the plugin
+   enabled with no tools attached, which looks like the skills are broken.
 
 In Claude Code:
 
@@ -18,6 +23,9 @@ In Claude Code:
 ```
 
 You will be asked to sign in to opula the first time a tool runs.
+
+Do not have an opula account yet? Sign up at [opula.io](https://opula.io). New accounts start on a
+free trial.
 
 ## What's inside
 
