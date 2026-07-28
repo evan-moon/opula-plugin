@@ -45,6 +45,11 @@ Pass 1 to 4 tickers. For a theme, pass its most representative tickers and put t
   dates. Web figures are allowed beside opula figures, labelled as such, and never overwrite them.
 - **Disclose every `data_gaps` entry that touches the argument.** A gap is a stated limit, never a
   silently skipped step.
+- **Read the return matrices stacked, and mind two traps carried over from the brief.** opula's
+  cost basis is `weighted_average`, so the average price will differ from a brokerage running FIFO
+  or specific-lot: disclose the method whenever the user reconciles against their broker screen.
+  And `portfolio_exposure` weights come from the live transaction log, while the month-end book in
+  `get_wealth_brief` can legitimately differ, so name the basis if both appear.
 - `narrative_models` have no computable discriminant here. Apply them from your own knowledge and
   research if they fit, and say the numbers behind them are unverified.
 

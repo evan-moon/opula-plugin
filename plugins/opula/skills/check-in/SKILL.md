@@ -49,6 +49,14 @@ guard gives, and point at the funding path when `funded_by_rec_ids` points at a 
 A recommendation carrying `data_gaps` was not judged. Say "이건 판단을 못 했어요" plus the missing
 input in plain words. Never let it pad the answer as if it were a considered HOLD.
 
+## Before you call a number a finding
+
+Read `false-positives.md` next to this file when the answer leans on a risk, concentration or
+performance figure. It lists the nine cases where an opula number reads as a finding and is not,
+with the field that discloses each one. The two that come up most: a null Sharpe means the history
+is short, so say how many days remain rather than "데이터 부족", and a high HHI means little when
+`hhi_coverage_pct` is low.
+
 ## Chain when the calendar demands it
 
 `events_entered`, a high-impact economic event within 7 days, or a holding's earnings within 5 days
