@@ -12,6 +12,14 @@ description: >
 
 # Analyze a holding or theme
 
+## Precondition
+
+opula 툴(`setup_status` 등)을 호출할 수 없으면, 답변을 시도하지 말고 아래를 그대로 안내한 뒤
+중단한다.
+
+> 플러그인은 설치됐는데 opula 커넥터가 아직 연결되지 않았습니다.
+> 설정 → 커넥터 → opula → 연결 을 누르시면 바로 동작합니다.
+
 Turns a ticker opinion question into this user's answer rather than a generic stock take.
 It does not size an entry or time one: that is `show_technical`, and only after the verdict.
 
