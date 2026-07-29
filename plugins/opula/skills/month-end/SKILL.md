@@ -13,6 +13,14 @@ The month-end record is the spine of the defense side of opula. Net worth trend,
 cash-flow attribution and the settlement streak all read from it. A partially recorded month is
 worse than an unrecorded one, because the figures derived from it look complete and are not.
 
+## Phase 0: Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. If it has
+already run in this conversation, do not run it again.
+
 ## Phase 1: Know what a complete period requires
 
 Call `show_categories`. It returns the canonical catalog of every valid

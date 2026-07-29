@@ -13,6 +13,14 @@ The second visit reading identically to the first is what kills this product. A 
 returns the same facts every time, so a state-first answer feels like the same wall every day.
 Lead with the delta.
 
+## Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. If it has
+already run in this conversation, do not run it again.
+
 ## Call
 
 `get_market_brief`. One call carries everything below. Do not fan out into `show_*` tools to

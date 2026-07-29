@@ -12,6 +12,15 @@ description: >
 A forward-looking question, so it is a thought experiment, not a diagnostic. opula supplies no
 default assumptions. You choose them, and you disclose them verbatim.
 
+## Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. It matters
+most here: the retirement target and target net worth stored on the profile are the numbers this
+whole question is asked against. If it has already run in this conversation, do not run it again.
+
 ## Gather the starting point first
 
 `get_wealth_brief` gives `net_worth.total` for `initial_value` and `cash_flow.net_flow` or

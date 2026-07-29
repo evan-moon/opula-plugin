@@ -13,6 +13,14 @@ A deterministic conditional, not a forecast. The caller supplies the shock, opul
 point-estimate impact per holding. Horizon is one day to one week. Anything measured in months or
 years belongs in the `fire` skill instead.
 
+## Phase 0: Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. If it has
+already run in this conversation, do not run it again.
+
 ## Phase 1: Pull the real exposure
 
 `get_market_brief` first, always. Two fields matter:

@@ -15,6 +15,14 @@ description: >
 Turns a ticker opinion question into this user's answer rather than a generic stock take.
 It does not size an entry or time one: that is `show_technical`, and only after the verdict.
 
+## Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. If it has
+already run in this conversation, do not run it again.
+
 ## The one rule that matters
 
 **Call `get_insight_report` first. Every ticker question, every time.**

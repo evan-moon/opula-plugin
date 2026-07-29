@@ -16,6 +16,15 @@ is worth opening again.
 Anything the user can put in front of you works: a pasted table, a CSV, a brokerage export, a
 screenshot of a holdings screen, or a spoken list. Read it, do not ask them to reformat it.
 
+## Phase 0: Call `setup_status` once, before anything else
+
+One call per conversation, on the first opula action. It returns this account's stored state, the
+plan, the profile (birth year, retirement target, target net worth, risk tolerance, country of
+residence) and `analyst_context`, the voice and behavioral contract every answer is written under.
+Skip it and you answer in the wrong register, against assumptions this user never set. Here it also
+tells you whether this is a first run, which changes whether the import is an onboarding moment or
+an addition to an existing book. If it has already run in this conversation, do not run it again.
+
 ## Phase 1: Parse and show your work
 
 Extract ticker, date, type, shares and price. Then **show the user your detected column mapping
