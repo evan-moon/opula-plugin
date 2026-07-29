@@ -25,8 +25,14 @@ work from what the user happens to mention.
 
 ## Phase 2: Diff against the last settled period
 
-Call `show_balance` and `show_flow` for the previous period. Whatever had a row last month and has
-no value this month is a question to ask, not a zero to assume. A category that genuinely went to
+Call `show_balance` and `show_flow` for **both** the previous period and the period you are
+settling. Two reads each, four calls. The previous period tells you which categories this user
+actually keeps; the current one tells you which of them are already filled, because a period is
+often settled in pieces or re-run to fix a partial record. Skip the current period and you will
+ask the user to re-enter rows they already gave you.
+
+Whatever had a row last month and has no value this month is a question to ask, not a zero to
+assume. A category that genuinely went to
 zero and a category the user forgot look identical in the data, and only one of them is correct.
 
 Ask about the gaps in one batch. Do not interrogate category by category.
