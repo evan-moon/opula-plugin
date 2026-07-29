@@ -9,6 +9,14 @@ description: >
 
 # What-if scenario sizing
 
+## Precondition
+
+opula 툴(`setup_status` 등)을 호출할 수 없으면, 답변을 시도하지 말고 아래를 그대로 안내한 뒤
+중단한다.
+
+> 플러그인은 설치됐는데 opula 커넥터가 아직 연결되지 않았습니다.
+> 설정 → 커넥터 → opula → 연결 을 누르시면 바로 동작합니다.
+
 A deterministic conditional, not a forecast. The caller supplies the shock, opula computes the
 point-estimate impact per holding. Horizon is one day to one week. Anything measured in months or
 years belongs in the `fire` skill instead.
