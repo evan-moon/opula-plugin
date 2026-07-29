@@ -76,6 +76,33 @@ It also never applies to deposit, dividend or tax rows: no investment decision w
 Call `get_market_brief` right after. The import is abstract until the user sees their own portfolio
 come back with real prices, weights and a stance. That is the moment the account becomes theirs.
 
+## A worked confirmation
+
+Phase 1 ends here, before any write. Illustrative.
+
+> 3건 읽었어요. 이렇게 매핑했는데 맞는지 봐주세요.
+>
+> | # | 종목 | 시장 | 티커 | 날짜 | 구분 | 수량 | 단가 |
+> |---|---|---|---|---|---|---|---|
+> | 1 | 애플 | US | AAPL | 2026-03-14 | 매수 | 10주 | $172.50 |
+> | 2 | 엔비디아 | US | NVDA | 2026-04-02 | 매수 | 5주 | $118.20 |
+> | 3 | 삼성전자 | KRX | 005930 | 2026-05-20 | 매수 | 20주 | ₩71,300 |
+>
+> 두 가지만 짚을게요.
+>
+> - 삼성전자는 원화로 들어가요. 한국 상장 종목이라 단가가 자동으로 KRW 기준이고, 2026-05-20
+>   당시 환율로 달러 환산돼서 저장돼요. "달러 기준"이라고 하셨지만 이 줄만 원화로 적혀 있어서
+>   그대로 읽었어요.
+> - 매수 사유는 안 물어볼게요. 과거 내역 정리라 지금 와서 "왜 샀었지"를 재구성하는 건 시간
+>   낭비예요. 사유 기록은 다음 실시간 매매 때 남기시면 돼요.
+>
+> 위 3건 이대로 기록할까요?
+
+읽을 점 넷. 행 수를 먼저 말해서 누락을 사용자가 잡을 수 있게 한다. 티커를 사용자가 쓴 이름이
+아니라 저장될 형태(`005930`, `KRX`)로 보여준다. 사용자 말과 데이터가 어긋나는 지점("달러
+기준"이라 했는데 원화 줄이 있음)을 덮지 않고 짚는다. 그리고 안 하는 것(사유 질문)도 왜 안 하는지
+말한다. 침묵한 생략은 사용자가 검증할 수 없다.
+
 ## Examples
 
 **A pasted brokerage table**

@@ -72,6 +72,35 @@ split between what they saved and what the market did, savings rate, and runway.
 Close on the streak when it is worth closing on. "N개월 연속" is the habit signal, and a settlement
 that lands with no acknowledgement is a chore rather than a ritual.
 
+## A worked question
+
+Phase 2 ends in one batched question, never a category-by-category interrogation. Illustrative,
+with invented figures.
+
+> 지난달(2026-06) 결산 내역을 확인했어요. 이번 달(2026-07) 결산을 위해 아래 숫자들을 알려주시면
+> 한 번에 기록할게요. 지난달 값을 참고로 같이 적었으니, 변동이 없으면 "동일"이라고만 하셔도 돼요.
+>
+> **자산 (7/31 기준 잔액)**
+> 현금 $87,992 / 달러현금 $1,295 / 주택청약 $4,127 / 국내주식 $4,713 / 해외주식 $282,197 /
+> 연금 $7,424 / 금현물 $15,505 / 전세보증금 $65,084 / 차량 $44,068
+> 증권사 예수금: 지난달엔 기록이 없었어요. 대기 중인 현금이 있으면 알려주세요 (없으면 넘어갈게요)
+>
+> **부채**
+> 신용카드 미결제 $6,684. 이번 달 카드값은요? 대출은 계속 없는 걸로 알고 있어요, 맞나요?
+>
+> **현금흐름 (7월 한 달)**
+> 수입: 급여, 사업소득, 배당, 이자, 기타. 지난달은 결혼 축의금 같은 일회성이 컸는데 이번 달도
+> 특이 수입 있었나요?
+> 지출: 식비, 여행, 기타생활비, 보험, 통신, 관리비, 월세, 경조사. 카드값 총액으로 주셔도 되고
+> 항목별로 나눠주셔도 좋아요.
+>
+> **통화**
+> 각 금액이 원화인지 달러인지도 같이 알려주세요. 환율 오차가 생기지 않게 확인차 여쭤봐요.
+
+읽을 점 넷. 카탈로그를 걸으면서도 질문은 한 덩어리다. 전월 값을 참고로 붙여 사용자가 "동일"만
+쳐도 되게 만든다. 지난달에 없던 항목은 빠뜨린 게 아니라 "없으면 넘어간다"고 명시해 부담을
+없앤다. 그리고 쓰기 전에 통화를 반드시 확인한다.
+
 ## Examples
 
 **"이번 달 결산하자"**
