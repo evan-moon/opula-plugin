@@ -26,6 +26,13 @@ contrast against a bear and a bull overlay.
 `project_net_worth` with at least two scenarios, three is better. Every scenario needs an explicit
 `expected_annual_return` and `annual_volatility`.
 
+**All of them go in ONE call, in the `scenarios[]` array.** Splitting them across two calls is the
+mistake the array exists to prevent: the seeded shock sequence is shared only within a single call,
+so scenarios computed in separate calls differ partly by random noise rather than purely by the
+assumptions you set, and the comparison you are about to present stops being a clean one. Call the
+tool twice only when the runs genuinely differ in something other than a scenario, such as a
+with-target versus without-target question or two different horizons.
+
 - `horizon_months` takes anything from 1 to 720. A FIRE question is usually 120 to 360.
 - `target_value` when the user named a number. That adds probability of reaching it and median
   months to reach. Omit it and you only get a distribution.
