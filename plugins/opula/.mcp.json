@@ -2,7 +2,7 @@
   "mcpServers": {
     "opula": {
       "type": "http",
-      "url": "https://opula.io/api/mcp"
+      "url": "https://opula.io/api/mcp-plugin"
     }
   }
 }
